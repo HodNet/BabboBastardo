@@ -4,8 +4,11 @@ import com.babbobastardo.model.Gifted;
 import com.babbobastardo.model.Gifter;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class Controller {
+public abstract class ParentController {
+    protected LinkedList<Gifter> gifters = new LinkedList<>();
+
     /*public static void sendEmail() {
         Log.i("Send email", "");
 
@@ -30,14 +33,4 @@ public class Controller {
                     "Non ci sono piccionaie (non è installato il client email).", Toast.LENGTH_SHORT).show();
         }
     }*/
-
-    public static void decidiChiRegalare(ArrayList<Gifter> gifters, ArrayList<Gifted> gifteds) {
-        for (Gifter gifter : gifters) {
-            if (gifter.getGifted() == null) {
-                int index = (int) (Math.random() * gifteds.size());
-                gifter.setGifted(gifteds.get(index));
-                gifteds.remove(index);
-            }
-        }
-    }
 }

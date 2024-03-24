@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BabboBastardo"
         tools:targetApi="31">
-        <activity android:name=".ui.GiftersActivity"
+        <activity android:name=".ui.editGifters.GiftersActivity"
             android:exported="false"
             android:screenOrientation="portrait">
         </activity>

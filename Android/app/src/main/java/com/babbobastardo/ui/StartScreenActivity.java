@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.babbobastardo.R;
+import com.babbobastardo.ui.editGifters.GiftersActivity;
 
 public class StartScreenActivity extends ParentActivity {
     private Button startButton;

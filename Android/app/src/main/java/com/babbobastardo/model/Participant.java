@@ -7,6 +7,10 @@ public abstract class Participant {
         this.name = name;
     }
 
+    public Participant(Participant participant) {
+        this.name = participant.name;
+    }
+
     public String getName() {
         return name;
     }
