@@ -4,13 +4,13 @@ import android.content.Context;
 
 import com.babbobastardo.model.Gifted;
 import com.babbobastardo.model.Gifter;
-import com.babbobastardo.repository.GiftersDatabase;
+import com.babbobastardo.repository.LocalDatabase;
 
 import java.util.ArrayList;
 
 public class EditGiftersController extends ParentController {
     private static EditGiftersController instance = null;
-    private GiftersDatabase giftersDatabase;
+    private LocalDatabase localDatabase;
 
     public static EditGiftersController getInstance(Context context) {
         if (instance == null) {
@@ -20,12 +20,12 @@ public class EditGiftersController extends ParentController {
     }
 
     private EditGiftersController(Context context) {
-        giftersDatabase = new GiftersDatabase(context);
+        localDatabase = new LocalDatabase(context);
     }
 
     public void addGifter(Gifter gifter) {
         gifters.add(gifter);
-        giftersDatabase.addGifter(gifter);
+        localDatabase.addGifter(gifter);
     }
 
     public void decidiChiRegalare() {
