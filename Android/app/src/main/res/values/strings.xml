@@ -6,4 +6,5 @@
 
     <!-- Schermata di modifica dei Partecipanti al Babbo Natale Segreto -->
     <string name="add_participants_phrase">Aggiungi coloro che parteciperanno al babbo natale segreto</string>
+    <string name="add_participant_phrase">Aggiungi partecipante</string>
 </resources>

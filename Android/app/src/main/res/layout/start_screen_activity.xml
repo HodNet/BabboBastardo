@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_background"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.HomeActivity">
+    tools:context=".ui.StartScreenActivity">
 
     <ImageView
-        android:id="@+id/home_snowFalling"
+        android:id="@+id/startScreen_snowFalling"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -22,17 +22,17 @@
         android:layout_marginVertical="@dimen/activity_vertical_margin">
 
         <ImageView
-            android:id="@+id/home_mainTitle"
+            android:id="@+id/startScreen_mainTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/main_title"
-            app:layout_constraintBottom_toTopOf="@id/home_startButton"
+            app:layout_constraintBottom_toTopOf="@id/startScreen_startButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/home_startButton"
+            android:id="@+id/startScreen_startButton"
             android:layout_width="@dimen/large_button_width"
             android:layout_height="@dimen/large_button_height"
             android:text="@string/start_button_phrase"
@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/home_mainTitle" />
+            app:layout_constraintTop_toBottomOf="@id/startScreen_mainTitle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

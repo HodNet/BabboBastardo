@@ -17,7 +17,7 @@
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.StartScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.NoActionBar">

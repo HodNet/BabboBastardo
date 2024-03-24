@@ -1,6 +1,6 @@
 package com.babbobastardo.model;
 
-public class Gifter extends User {
+public class Gifter extends Participant {
     private String email;
     private Gifted gifted;
 

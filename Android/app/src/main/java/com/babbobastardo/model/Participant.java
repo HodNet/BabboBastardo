@@ -1,9 +1,9 @@
 package com.babbobastardo.model;
 
-public class User {
+public abstract class Participant {
     private String name;
 
-    public User(String name) {
+    public Participant(String name) {
         this.name = name;
     }
 

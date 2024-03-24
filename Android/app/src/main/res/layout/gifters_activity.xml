@@ -14,82 +14,88 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- TITLE -->
-    <TextView
-        android:id="@+id/title_of_edit_external_links"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/add_participants_phrase"
-        android:textSize="@dimen/title_text_small"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
-
-    <!-- ADD EXTERNAL LINK BUTTON -->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/add_external_link_button_edit_external_links"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/icon_size_large"
-        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-        android:layout_marginVertical="@dimen/activity_vertical_margin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_of_edit_external_links">
-        <ImageView
-            android:id="@+id/icon_of_add_external_link_edit_external_links"
-            android:layout_width="@dimen/icon_size_large"
-            android:layout_height="@dimen/icon_size_large"
-            android:src="@drawable/ic_plus_24dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/green" />
-
-        <TextView
-            android:id="@+id/add_external_link_text_edit_external_links"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_external_link_phrase"
-            app:layout_constraintBottom_toBottomOf="@id/icon_of_add_external_link_edit_external_links"
-            app:layout_constraintStart_toEndOf="@id/icon_of_add_external_link_edit_external_links"
-            app:layout_constraintTop_toTopOf="@id/icon_of_add_external_link_edit_external_links" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-    <!-- EXTERNAL LINKS RECYCLER VIEW -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/external_links_recycler_view_edit_external_links"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:padding="16dp"
-        android:scrollbars="vertical"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@id/done_button_edit_external_links"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/add_external_link_button_edit_external_links" />
-
-
-
-
-    <!-- DONE BUTTON -->
-    <ImageView
-        android:id="@+id/done_button_edit_external_links"
-        android:layout_width="@dimen/icon_size_large"
-        android:layout_height="@dimen/icon_size_large"
         android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
-        android:layout_marginVertical="@dimen/activity_vertical_margin"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_done_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/green" />
+        android:layout_marginVertical="@dimen/activity_vertical_margin">
+
+        <!-- TITLE -->
+        <TextView
+            android:id="@+id/gifters_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_participants_phrase"
+            android:textSize="@dimen/text_size_medium"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+        <!-- ADD EXTERNAL LINK BUTTON -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/gifters_addButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/large_button_height"
+            android:layout_marginTop="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gifters_title">
+            <ImageView
+                android:id="@+id/gifters_addButtonIcon"
+                android:layout_width="@dimen/large_button_height"
+                android:layout_height="@dimen/large_button_height"
+                android:src="@drawable/add_button_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/gifters_addButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_participant_phrase"
+                app:layout_constraintBottom_toBottomOf="@id/gifters_addButtonIcon"
+                app:layout_constraintStart_toEndOf="@id/gifters_addButtonIcon"
+                app:layout_constraintTop_toTopOf="@id/gifters_addButtonIcon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+        <!-- EXTERNAL LINKS RECYCLER VIEW -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/gifters_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorSecondary"
+            android:layout_marginVertical="16dp"
+            android:scrollbars="vertical"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintBottom_toTopOf="@id/gifters_doneButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gifters_addButton" />
+
+
+
+
+        <!-- DONE BUTTON -->
+        <ImageView
+            android:id="@+id/gifters_doneButton"
+            android:layout_width="@dimen/large_button_height"
+            android:layout_height="@dimen/large_button_height"
+            android:scaleType="fitXY"
+            android:src="@drawable/done_button_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/colorPrimary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
