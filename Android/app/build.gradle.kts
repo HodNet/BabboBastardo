@@ -53,6 +53,8 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.saadahmedev.popup-dialog:popup-dialog:1.0.5")
     implementation("com.akexorcist:RoundCornerProgressBar:2.0.3")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("com.mailersend:java-sdk:1.0.0")
 
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")

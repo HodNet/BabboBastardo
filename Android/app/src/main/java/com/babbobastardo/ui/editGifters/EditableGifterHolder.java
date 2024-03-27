@@ -1,7 +1,9 @@
-package com.ingsw.dietiDeals24.ui.utility.recyclerViews.externalLinks;
+package com.babbobastardo.ui.editGifters;
 
 import static java.lang.Thread.sleep;
 
+import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.babbobastardo.R;
 import com.babbobastardo.model.Gifter;
+import com.babbobastardo.tools.PopupGeneratorOf;
 
 import java.util.concurrent.ExecutionException;
 
@@ -30,17 +33,15 @@ public class EditableGifterHolder extends RecyclerView.ViewHolder {
         deleteButton = itemView.findViewById(R.id.editableGifter_deleteButton);
     }
 
-    public void bind(Fragment fragment, Gifter gifter) {
+    public void bind(Context context, Gifter gifter) {
         nameTextView.setText(gifter.getName());
         emailTextView.setText(gifter.getEmail());
-        editButton.setOnClickListener(v -> editLink(fragment, gifter));
-        deleteButton.setOnClickListener(v -> PopupGeneratorOf.areYouSureToDeleteLinkPopup(fragment, gifter));
+        editButton.setOnClickListener(v -> editGifter(context, gifter));
+        deleteButton.setOnClickListener(v -> PopupGeneratorOf.areYouSureToDeleteGifterPopup(context, gifter));
     }
 
-    private void editLink(Fragment fragment, Gifter gifter) {
-        ProfileController.setSelectedLink(gifter);
-        fragment.getParentFragmentManager().beginTransaction().replace(R.id.fragment_container_home,
-                new EditExternalLinkFragment()).commit();
+    private void editGifter(Context context, Gifter gifter) {
+        //TODO
     }
 }
 

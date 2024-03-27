@@ -1,4 +1,4 @@
-package com.ingsw.dietiDeals24.ui.utility;
+package com.babbobastardo.tools;
 
 import static java.lang.Thread.sleep;
 
@@ -6,10 +6,13 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.babbobastardo.control.EditGiftersController;
 import com.babbobastardo.model.Gifter;
+import com.babbobastardo.ui.editGifters.GiftersActivity;
 import com.saadahmedsoft.popupdialog.PopupDialog;
 import com.saadahmedsoft.popupdialog.Styles;
 import com.saadahmedsoft.popupdialog.listener.OnDialogButtonClickListener;
@@ -78,8 +81,8 @@ public class PopupGeneratorOf {
     }
 
 
-    public static void areYouSureToDeleteGifterPopup(Fragment fragment, Gifter gifter) {
-        PopupDialog.getInstance(fragment.getContext())
+    public static void areYouSureToDeleteGifterPopup(Context context, Gifter gifter) {
+        PopupDialog.getInstance(context)
                 .setStyle(Styles.STANDARD)
                 .setHeading("Rimuovere il partecipante?")
                 .setDescription("Sei sicuro di voler rimuovere " + gifter.getName() +
@@ -88,12 +91,12 @@ public class PopupGeneratorOf {
                 .setPopupDialogIconTint(R.color.red)
                 .setCancelable(false)
                 .setPositiveButtonText("Sì, l'ha trollata")
-                .setNegativeButtonText("Annulla")
+                .setNegativeButtonText("No, Annulla")
                 .showDialog(new OnDialogButtonClickListener() {
                     @Override
                     public void onPositiveClicked(Dialog dialog) {
                         super.onPositiveClicked(dialog);
-                        deleteLink(fragment, gifter);
+                        deleteGifter(context, gifter);
                     }
 
                     @Override
@@ -103,6 +106,14 @@ public class PopupGeneratorOf {
                 });
     }
 
+    private static void deleteGifter(Context context, Gifter gifter) {
+        EditGiftersController.getInstance(context).deleteGifter(gifter);
+        Toast.makeText(context, "Partecipante rimosso", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(context, GiftersActivity.class);
+        context.startActivity(intent);
+    }
+
+/*
     private static void deleteLink(Fragment fragment, Gifter gifter) {
         PopupDialog loading = PopupGeneratorOf.loadingPopup(fragment.getContext());
         new Thread(() -> {
@@ -145,5 +156,5 @@ public class PopupGeneratorOf {
                         super.onNegativeClicked(dialog);
                     }
                 });
-    }
+    }*/
 }

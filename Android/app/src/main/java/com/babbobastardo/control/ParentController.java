@@ -1,13 +1,30 @@
 package com.babbobastardo.control;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+
 import com.babbobastardo.model.Gifted;
 import com.babbobastardo.model.Gifter;
+import com.babbobastardo.repository.GiftersRepository;
+import com.babbobastardo.repository.LocalDatabase;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 public abstract class ParentController {
-    protected LinkedList<Gifter> gifters = new LinkedList<>();
+    protected LinkedList<Gifter> gifters;
+    protected LocalDatabase localDatabase;
+    protected GiftersRepository giftersRepository;
+
+    protected ParentController(Context context) {
+        localDatabase = new LocalDatabase(context);
+        giftersRepository = new GiftersRepository(localDatabase);
+        gifters = (LinkedList<Gifter>) giftersRepository.getGifters();
+    }
+
+    public LinkedList<Gifter> getGifters() {
+        return gifters;
+    }
 
     /*public static void sendEmail() {
         Log.i("Send email", "");

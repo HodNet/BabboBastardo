@@ -24,14 +24,14 @@ public class LocalDatabase extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // GIFTER
-    private static final String GIFTER_TABLE_NAME = "Gifter";
-    private static final String GIFTER_COLUMN_1 = "name";
-    private static final String GIFTER_COLUMN_2 = "email";
-    private static final String GIFTER_COLUMN_3 = "giftedName";
+    public static final String GIFTER_TABLE_NAME = "Gifter";
+    public static final String GIFTER_COLUMN_1 = "name";
+    public static final String GIFTER_COLUMN_2 = "email";
+    public static final String GIFTER_COLUMN_3 = "giftedName";
 
     // GIFTED
-    private static final String GIFTED_TABLE_NAME = "Gifted";
-    private static final String GIFTED_COLUMN_1 = "name";
+    public static final String GIFTED_TABLE_NAME = "Gifted";
+    public static final String GIFTED_COLUMN_1 = "name";
 
     public LocalDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -59,15 +59,4 @@ public class LocalDatabase extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + GIFTER_TABLE_NAME);
         onCreate(db);
     }
-
-    public void addGifter(Gifter gifter) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(GIFTER_COLUMN_1, gifter.getName());
-        values.put(GIFTER_COLUMN_2, gifter.getEmail());
-        db.insert(GIFTER_TABLE_NAME, null, values);
-        db.close();
-    }
-
-    // Other methods to update, delete and retrieve data...
 }
