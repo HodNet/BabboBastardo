@@ -69,7 +69,7 @@
 
 
 
-        <!-- EXTERNAL LINKS RECYCLER VIEW -->
+        <!-- GIFTER RECYCLER VIEW -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/gifters_recyclerView"
             android:layout_width="match_parent"
